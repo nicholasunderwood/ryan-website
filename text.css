@@ -1,0 +1,89 @@
+#text-wrapper{    
+    margin: 0 30px;
+    flex-grow: 4;
+    top: 0;
+    position: sticky;
+    height: 50px;
+}
+
+#text-body {
+    width: 90%;
+    height: fit-content;
+    max-height: 85vh !important;
+    margin: 2em auto 0 auto;
+    padding: 1.5rem;
+    border-radius: 16px;
+    background: #17141d;
+    box-shadow: -1rem 0 3rem #000;
+    overflow: hidden;
+    display: flex;
+    flex-flow: column;
+}
+
+#text-body pre {
+    background: #222;
+    /* border: 1px solid #ddd; */
+    border-left: 3px solid var(--c2);
+    color: #666;
+    page-break-inside: avoid;
+    font-family: monospace;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 1.6em;
+    max-width: 100%;
+    overflow: auto;
+    padding: 1em 1.5em;
+    display: block;
+    word-wrap: break-word;
+}
+
+
+#text-header{
+    line-height: 24px;
+    display: flex;
+    justify-content: space-between;
+    flex: 0 1 auto;
+    margin-bottom: 1rem;
+}
+
+#text-header h1 {
+    font-size: 24px;
+    margin: 0;
+    text-decoration: none;
+    /* color: inherit;
+    border: 0;
+    display: inline-block;
+    background: var(--grad);
+    text-shadow: none;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text; */
+}
+
+.grad-text{
+    color: inherit;
+    border: 0;
+    display: inline-block;
+    background: var(--grad);
+    text-shadow: none;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+#text-header span {
+    font-size: 20px;
+    color: #7a7a8c;
+    flex-shrink: 0;
+}
+
+#text-content {
+    flex: 1 1 auto;
+    font-size: 20px;
+    overflow: auto;
+    padding: 0.5rem 0.5rem 0.5rem 0;
+}
+
+p {
+    margin: 0;
+}

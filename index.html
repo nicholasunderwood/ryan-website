@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ryan Marienthal</title>
+		<link rel="stylesheet" href="cards.css">
+		<link rel="stylesheet" href="text.css">
+	</head>
+	<body>
+		<header id="title-header">
+			<div class="title">
+				<h1>Ryan Marienthal's</h1>
+				<h2>inner machinations</h2>
+			</div>
+			<div class="links">
+				<a href="#" class="link"><img src="./imgs/gmail.png"></a>
+				<a href="#" class="link"><img src="./imgs/github.png"></a>
+				<a href="#" class="link"><img src="./imgs/instagram.png"></a>
+				<a href="#" class="link"><img src="./imgs/linkedin.png"></a>
+				<a href="#" class="link"><img src="./imgs/twitch.png"></a>
+			</div>
+		</header>
+		<div id="border-div"></div>
+		
+		<main>
+
+			</section>
+			<section class="card-list">
+				<article class="card">
+					<header class="card-header">
+						<h2>About Me</h2>
+						<p>Jan 11th 2022</p>
+					</header>
+					<div class="card-body">
+						<p>
+							Get to know me!
+						</p>
+						<div class="overlay"></div>
+					</div>
+					<div class="project-blog">
+						<p>
+							I am a sophmore at Cal Poly Technical University, studying electrical engineering. <br>
+							I am also very passionate about being a funny little guy and exploring in depth furby hair sytling <br>
+
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit pellentesque habitant morbi tristique. Sit amet risus nullam eget felis eget. Quam id leo in vitae turpis massa. Cras adipiscing enim eu turpis. Leo urna molestie at elementum eu facilisis. Ornare arcu odio ut sem nulla pharetra diam sit. At erat pellentesque adipiscing commodo. Diam quis enim lobortis scelerisque fermentum dui faucibus in. Dui id ornare arcu odio ut sem nulla pharetra. Interdum posuere lorem ipsum dolor sit amet consectetur. Sit amet commodo nulla facilisi nullam. Egestas sed tempus urna et pharetra. At volutpat diam ut venenatis tellus. Interdum posuere lorem ipsum dolor sit. Sit amet purus gravida quis blandit turpis cursus. Ullamcorper sit amet risus nullam eget felis eget nunc lobortis. Nisi scelerisque eu ultrices vitae.
+
+							Placerat orci nulla pellentesque dignissim enim. Augue ut lectus arcu bibendum. Aliquet lectus proin nibh nisl condimentum. Facilisis magna etiam tempor orci eu lobortis elementum. Ornare arcu odio ut sem nulla pharetra. Praesent elementum facilisis leo vel. Accumsan lacus vel facilisis volutpat est velit egestas dui. Egestas congue quisque egestas diam in arcu cursus euismod quis. Libero volutpat sed cras ornare. Commodo viverra maecenas accumsan lacus vel.
+						</p>
+					</div>
+				</article>
+
+				
+				<article class="card">
+					<header class="card-header">
+						<h2>Basic Delay</h2>
+						<p>Sep 16th 2020</p>
+					</header>
+					<div class="card-body">
+						<p>
+							Short Project description
+						</p>
+					</div>
+					<div class="project-blog">
+						<h3>Version 1</h3> 
+						<p>This C program takes in a time and outputs a text file with 4 columns, 1 and 3 are just the
+						Tick value and 2 and 4 are Current display and delayed Display respectively. <br><br>
+
+
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nunc sed velit dignissim sodales ut eu sem integer vitae. Quam nulla porttitor massa id neque aliquam vestibulum morbi blandit. Morbi enim nunc faucibus a pellentesque sit amet porttitor eget. Eu facilisis sed odio morbi quis. Nulla aliquet porttitor lacus luctus accumsan tortor posuere ac. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. 
+						</p>
+						
+						<pre>#include \< iostream \>
+//operative variables
+double T;
+double CURRENT_OUT;
+FILE* DELAY_FILE;
+
+//USER EDITED, set delay time
+unsigned int DELAY_TIME = 3000;
+
+int main()
+{
+	//allocate memory, dependent on delay time
+	double* DATA = (double*)calloc(DELAY_TIME, sizeof(double) * DELAY_TIME);
+	//set output file
+	DELAY_FILE = fopen("INSERT FILEPATH HERE", "w");
+	//Set to while(1) for continous operation, runtime is arbitrary for testing
+	while (T\< DELAY_TIME*2) {
+		//set current out to be the input function
+		CURRENT_OUT = ((1/T*10)*cos(T)+(3*sin(T)/10)+(3*cos((T/0.9) + 900))+(4*cos(T/100)));
+		//stores output
+		DATA[0] = CURRENT_OUT;
+		//"shifts" data so that audio is delayed the number of values in DELAY_TIME
+		memmove(DATA+1, DATA, sizeof(double) * DELAY_TIME-1);
+		//output to file, formatted as white spaces in between for GNUplot
+		fprintf(DELAY_FILE, "%f", T);
+		fprintf(DELAY_FILE, " ");
+		fprintf(DELAY_FILE, "%f", CURRENT_OUT);
+		fprintf(DELAY_FILE, " ");
+		fprintf(DELAY_FILE, "%f", T);
+		fprintf(DELAY_FILE, " ");
+		fprintf(DELAY_FILE, "%f", DATA[DELAY_TIME - 1]);
+		fprintf(DELAY_FILE, "\n");
+		//incremented by 0.1 so functions are displayed accurately
+		T+= 0.1;
+	}
+	fclose(DELAY_FILE);
+}</pre>
+
+
+						<p>
+							Enim lobortis scelerisque fermentum dui faucibus in ornare quam viverra. Magna ac placerat vestibulum lectus. Commodo quis imperdiet massa tincidunt nunc pulvinar sapien et ligula. Viverra vitae congue eu consequat. Pulvinar sapien et ligula ullamcorper malesuada proin libero nunc consequat. Lectus proin nibh nisl condimentum id. Tellus elementum sagittis vitae et leo duis ut. Viverra ipsum nunc aliquet bibendum enim facilisis gravida neque.
+						</p>
+
+						<h3>Version 2</h3>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut aliquam purus sit amet luctus venenatis lectus magna fringilla. At risus viverra adipiscing at in tellus. Ac auctor augue mauris augue neque gravida in fermentum. Nunc mi ipsum faucibus vitae aliquet nec ullamcorper. Blandit libero volutpat sed cras ornare. Imperdiet massa tincidunt nunc pulvinar sapien. Ut tristique et egestas quis ipsum. Sagittis id consectetur purus ut faucibus pulvinar elementum. Velit egestas dui id ornare arcu odio. Pulvinar pellentesque habitant morbi tristique.
+
+						Quam viverra orci sagittis eu volutpat odio. Est lorem ipsum dolor sit amet consectetur. Gravida rutrum quisque non tellus orci. Sit amet cursus sit amet dictum sit amet. Augue interdum velit euismod in pellentesque massa. Vulputate odio ut enim blandit. Est velit egestas dui id ornare arcu odio ut sem. Cras pulvinar mattis nunc sed blandit libero. Quis hendrerit dolor magna eget. Posuere lorem ipsum dolor sit amet. Euismod lacinia at quis risus sed vulputate odio ut enim. Magna fringilla urna porttitor rhoncus dolor. Aliquam nulla facilisi cras fermentum odio eu. A lacus vestibulum sed arcu non odio euismod lacinia. Diam maecenas sed enim ut sem viverra aliquet.
+					</div>
+				</article>
+				<article class="card">
+					<header class="card-header">
+						<h2>Data Vectorizer</h2>
+						<p>Jan 11th 2022</p>
+					</header>
+					<div class="card-body">
+						<p>
+							Short Project description
+						</p>
+						<div class="overlay"></div>
+					</div>
+					<div class="project-blog">
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit pellentesque habitant morbi tristique. Sit amet risus nullam eget felis eget. Quam id leo in vitae turpis massa. Cras adipiscing enim eu turpis. Leo urna molestie at elementum eu facilisis. Ornare arcu odio ut sem nulla pharetra diam sit. At erat pellentesque adipiscing commodo. Diam quis enim lobortis scelerisque fermentum dui faucibus in. Dui id ornare arcu odio ut sem nulla pharetra. Interdum posuere lorem ipsum dolor sit amet consectetur. Sit amet commodo nulla facilisi nullam. Egestas sed tempus urna et pharetra. At volutpat diam ut venenatis tellus. Interdum posuere lorem ipsum dolor sit. Sit amet purus gravida quis blandit turpis cursus. Ullamcorper sit amet risus nullam eget felis eget nunc lobortis. Nisi scelerisque eu ultrices vitae.
+
+							Placerat orci nulla pellentesque dignissim enim. Augue ut lectus arcu bibendum. Aliquet lectus proin nibh nisl condimentum. Facilisis magna etiam tempor orci eu lobortis elementum. Ornare arcu odio ut sem nulla pharetra. Praesent elementum facilisis leo vel. Accumsan lacus vel facilisis volutpat est velit egestas dui. Egestas congue quisque egestas diam in arcu cursus euismod quis. Libero volutpat sed cras ornare. Commodo viverra maecenas accumsan lacus vel.
+						</p>
+					</div>
+				</article>
+				<article class="card">
+					<header class="card-header">
+						<h2>Guitar Pedal</h2>
+						<p>Jan 11th 2022</p>
+					</header>
+					<div class="card-body">
+						<p>
+							Short Project description
+						</p>
+						<div class="overlay"></div>
+					</div>
+					<div class="project-blog">
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur adipiscing elit pellentesque habitant morbi tristique. Sit amet risus nullam eget felis eget. Quam id leo in vitae turpis massa. Cras adipiscing enim eu turpis. Leo urna molestie at elementum eu facilisis. Ornare arcu odio ut sem nulla pharetra diam sit. At erat pellentesque adipiscing commodo. Diam quis enim lobortis scelerisque fermentum dui faucibus in. Dui id ornare arcu odio ut sem nulla pharetra. Interdum posuere lorem ipsum dolor sit amet consectetur. Sit amet commodo nulla facilisi nullam. Egestas sed tempus urna et pharetra. At volutpat diam ut venenatis tellus. Interdum posuere lorem ipsum dolor sit. Sit amet purus gravida quis blandit turpis cursus. Ullamcorper sit amet risus nullam eget felis eget nunc lobortis. Nisi scelerisque eu ultrices vitae.
+
+							Placerat orci nulla pellentesque dignissim enim. Augue ut lectus arcu bibendum. Aliquet lectus proin nibh nisl condimentum. Facilisis magna etiam tempor orci eu lobortis elementum. Ornare arcu odio ut sem nulla pharetra. Praesent elementum facilisis leo vel. Accumsan lacus vel facilisis volutpat est velit egestas dui. Egestas congue quisque egestas diam in arcu cursus euismod quis. Libero volutpat sed cras ornare. Commodo viverra maecenas accumsan lacus vel.
+						</p>
+					</div>
+				</article>
+			</section>
+			<section id="text-wrapper">
+				<div id="text-body">
+					<header id="text-header">
+						<h1 class="grad-text"></h1><span></span>
+					</header>
+					<div id='text-content'>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+		<script src="script.js"></script>
+	</body>
+</html>
