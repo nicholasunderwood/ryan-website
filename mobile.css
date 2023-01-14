@@ -1,7 +1,7 @@
 @media only screen and (max-width: 700px) {
-    
-    html{
-        /* height: auto; */
+
+    #title-header {
+        justify-content: center;
     }
 
     #title-header .title{

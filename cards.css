@@ -3,7 +3,7 @@
 :root{
     --bg1: #95AFBA;
     --bg: #3F7CAC;
-    --a1: #664147;
+    --a1: #0C0C0C;
     --g1: #046E8F;
     --g2: #14453D;
 
@@ -32,11 +32,15 @@ body {
     /* height: 5em; */
     flex: 0 0 auto;
     margin: 2em 3em 1em 3em;
-}
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 
+
+}
 #title-header .title {
     /* padding: 0 1.5em; */
-    float: left;
+    flex: 1 0 auto;
     position: relative;
 }
 
@@ -49,27 +53,16 @@ body {
     font-size: 1.5em;
 }
 
-#title-header .links {
-    margin: 0.5em 0;
-    float: right;
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    justify-content: flex-end;
-}
 
 #title-header .link {
-    margin: 0 1em;
+    margin: 0.5em 1em;
 }
 
-.links .link img{
+.link img{
     height: 4em;
     width: auto;
 }
 
-.links .link:nth-child(2){
-    filter: invert(1);
-}
 
 #border-div{
     height: 0;
